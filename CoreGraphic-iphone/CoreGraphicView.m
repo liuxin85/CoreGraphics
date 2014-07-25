@@ -44,7 +44,9 @@
     [self drawGradient:context];
     
     CGContextRestoreGState(context);
-    
+    // clean up
+
+    CFRelease(mask);
     
 }
 - (void)drawGradient: (CGContextRef)context
@@ -63,6 +65,10 @@
     
     // Create and Draw the gradient
     CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
+    
+    //clean up
+    CGColorSpaceRelease(baseSpace);
+    CGGradientRelease(gradient);
     
 }
 - (void)drawTextAtTopOfScreen: (CGContextRef)context
