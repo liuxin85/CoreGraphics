@@ -18,6 +18,30 @@
     }
     return self;
 }
+
+- (void)drawTextAtTopOfScreen: (CGContextRef)context
+{
+    CGContextSaveGState(context);
+    
+    // Create UIColor to pass into text attributes
+    UIColor *textColor = [UIColor colorWithRed:0.80f green:0.85f blue:0.95f alpha:1.0f];
+    
+    // Set shadow and color of shadow
+    CGContextSetShadowWithColor(context, CGSizeZero, 10.0f, [[UIColor blackColor]CGColor]);
+    
+    // Set font
+    UIFont *customFont = [UIFont systemFontOfSize:20.0f];
+    
+    // Set titleText
+    NSString *titleText = @"iOS Graphics!";
+    
+    [titleText drawAtPoint: CGPointMake(80, 5)
+            withAttributes:@{NSFontAttributeName: customFont,
+                             NSForegroundColorAttributeName: textColor}];
+    CGContextRestoreGState(context);
+    
+    
+}
 - (void)drawTriagle: (CGContextRef)context
 {
     CGContextSaveGState(context);
@@ -72,6 +96,10 @@
     // Set color of current context
     [[UIColor whiteColor]set];
     
+    // Set shadow and color of shadow
+    CGContextSetShadowWithColor(context, CGSizeZero, 10.0f, [[UIColor blackColor]CGColor]);
+    
+    
     // Draw ellipse
     CGRect ellipseRect = CGRectMake(60.f, 150.f, 200.f, 200.f);
     CGContextFillEllipseInRect(context, ellipseRect);
@@ -88,6 +116,7 @@
     [self drawEllipse:context];
     [self drawTriagle: context];
     [self drawArc: context];
+    [self drawTextAtTopOfScreen: context];
     
     
     
