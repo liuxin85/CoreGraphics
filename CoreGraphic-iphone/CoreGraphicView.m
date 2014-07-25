@@ -18,6 +18,35 @@
     }
     return self;
 }
+- (void)drawEllipseWithGradient: (CGContextRef)context
+{
+    CGContextSaveGState(context);
+    UIGraphicsBeginImageContextWithOptions((self.frame.size), NO, 0.0);
+    
+    
+    CGContextRef newContext = UIGraphicsGetCurrentContext();
+    
+    // Trnaslate and scale image to compensate for Quartz's inverted coordinate system
+    CGContextTranslateCTM(newContext, 0.0, self.frame.size.height);
+    CGContextScaleCTM(newContext, 1.0, -1.0);
+    
+    // Set color of current context
+    [[UIColor blackColor]set];
+    
+    // Draw ellipse
+    CGRect ellipseRect = CGRectMake(110.f, 200.f, 100.f, 100.f);
+    CGContextFillEllipseInRect(newContext, ellipseRect);
+    
+    CGImageRef mask = CGBitmapContextCreateImage(UIGraphicsGetCurrentContext());
+    UIGraphicsEndImageContext();
+    
+    CGContextClipToMask(context, self.bounds, mask);
+    [self drawGradient:context];
+    
+    CGContextRestoreGState(context);
+    
+    
+}
 - (void)drawGradient: (CGContextRef)context
 {
     // Define start and end colors
@@ -136,7 +165,10 @@
     [self drawTextAtTopOfScreen: context];
     
     // call function to draw gradient
-    [self drawGradient: context];
+    //[self drawGradient: context];
+    
+    // call function to draw ellipse filled with a gradient
+    [self drawEllipseWithGradient: context];
     
     
     
