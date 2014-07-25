@@ -18,7 +18,24 @@
     }
     return self;
 }
-
+- (void)drawGradient: (CGContextRef)context
+{
+    // Define start and end colors
+    CGFloat colors [8] = {
+        0.0, 0.0, 1.0, 1.0, // Blue
+        0.0, 1.0, 0.0, 1.0}; // Green
+    // Setup a color space and gradient space
+    CGColorSpaceRef baseSpace = CGColorSpaceCreateDeviceRGB();
+    CGGradientRef gradient = CGGradientCreateWithColorComponents(baseSpace, colors, NULL, 2);
+    
+    // Define the gradient direction
+    CGPoint startPoint = CGPointMake(160.0f, 100.0f);
+    CGPoint endPoint = CGPointMake(160.0f, 360.0f);
+    
+    // Create and Draw the gradient
+    CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
+    
+}
 - (void)drawTextAtTopOfScreen: (CGContextRef)context
 {
     CGContextSaveGState(context);
@@ -117,6 +134,9 @@
     [self drawTriagle: context];
     [self drawArc: context];
     [self drawTextAtTopOfScreen: context];
+    
+    // call function to draw gradient
+    [self drawGradient: context];
     
     
     
