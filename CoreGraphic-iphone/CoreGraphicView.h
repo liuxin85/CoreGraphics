@@ -10,4 +10,7 @@
 
 @interface CoreGraphicView : UIView
 
+@property (strong, nonatomic)UIImage *image;
+
+
 @end

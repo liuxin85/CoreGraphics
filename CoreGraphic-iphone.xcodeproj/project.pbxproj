@@ -22,6 +22,7 @@
 		4B25CEE21981F8DC000064F9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B25CEE01981F8DC000064F9 /* InfoPlist.strings */; };
 		4B25CEE41981F8DC000064F9 /* CoreGraphic_iphoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B25CEE31981F8DC000064F9 /* CoreGraphic_iphoneTests.m */; };
 		4B25CEEF1981F93A000064F9 /* CoreGraphicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B25CEEE1981F93A000064F9 /* CoreGraphicView.m */; };
+		4B25CEF11982284A000064F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B25CEF01982284A000064F9 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		4B25CEE31981F8DC000064F9 /* CoreGraphic_iphoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreGraphic_iphoneTests.m; sourceTree = "<group>"; };
 		4B25CEED1981F93A000064F9 /* CoreGraphicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreGraphicView.h; sourceTree = "<group>"; };
 		4B25CEEE1981F93A000064F9 /* CoreGraphicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreGraphicView.m; sourceTree = "<group>"; };
+		4B25CEF01982284A000064F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B25CEF11982284A000064F9 /* QuartzCore.framework in Frameworks */,
 				4B25CEBB1981F8DB000064F9 /* CoreGraphics.framework in Frameworks */,
 				4B25CEBD1981F8DB000064F9 /* UIKit.framework in Frameworks */,
 				4B25CEB91981F8DB000064F9 /* Foundation.framework in Frameworks */,
@@ -104,6 +107,7 @@
 		4B25CEB71981F8DB000064F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B25CEF01982284A000064F9 /* QuartzCore.framework */,
 				4B25CEB81981F8DB000064F9 /* Foundation.framework */,
 				4B25CEBA1981F8DB000064F9 /* CoreGraphics.framework */,
 				4B25CEBC1981F8DB000064F9 /* UIKit.framework */,
@@ -462,6 +466,7 @@
 				4B25CEE91981F8DC000064F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B25CEEA1981F8DC000064F9 /* Build configuration list for PBXNativeTarget "CoreGraphic-iphoneTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +475,7 @@
 				4B25CEEC1981F8DC000064F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

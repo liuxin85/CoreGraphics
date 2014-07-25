@@ -14,6 +14,37 @@
 
 @implementation ViewController
 
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+- (void) viewDidAppear:(BOOL)animated
+{
+    [self.view becomeFirstResponder];
+    [super viewWillAppear:animated];
+    
+}
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [self.view resignFirstResponder];
+    [super viewWillDisappear: animated];
+}
+- (void) motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (event.subtype == UIEventSubtypeMotionShake) {
+        // Device was shaken
+        // Acquire image of current layer
+        UIGraphicsBeginImageContext(self.view.bounds.size);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        [self.view.layer renderInContext: context];
+        
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        self.myView.image = image;
+        [self.myView setNeedsDisplay];
+    }
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
