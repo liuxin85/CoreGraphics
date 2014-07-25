@@ -21,6 +21,7 @@
 		4B25CEDA1981F8DC000064F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B25CEBC1981F8DB000064F9 /* UIKit.framework */; };
 		4B25CEE21981F8DC000064F9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B25CEE01981F8DC000064F9 /* InfoPlist.strings */; };
 		4B25CEE41981F8DC000064F9 /* CoreGraphic_iphoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B25CEE31981F8DC000064F9 /* CoreGraphic_iphoneTests.m */; };
+		4B25CEEF1981F93A000064F9 /* CoreGraphicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B25CEEE1981F93A000064F9 /* CoreGraphicView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		4B25CEDF1981F8DC000064F9 /* CoreGraphic-iphoneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreGraphic-iphoneTests-Info.plist"; sourceTree = "<group>"; };
 		4B25CEE11981F8DC000064F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4B25CEE31981F8DC000064F9 /* CoreGraphic_iphoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreGraphic_iphoneTests.m; sourceTree = "<group>"; };
+		4B25CEED1981F93A000064F9 /* CoreGraphicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreGraphicView.h; sourceTree = "<group>"; };
+		4B25CEEE1981F93A000064F9 /* CoreGraphicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreGraphicView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				4B25CECA1981F8DB000064F9 /* Main.storyboard */,
 				4B25CECD1981F8DB000064F9 /* ViewController.h */,
 				4B25CECE1981F8DB000064F9 /* ViewController.m */,
+				4B25CEED1981F93A000064F9 /* CoreGraphicView.h */,
+				4B25CEEE1981F93A000064F9 /* CoreGraphicView.m */,
 				4B25CED01981F8DC000064F9 /* Images.xcassets */,
 				4B25CEBF1981F8DB000064F9 /* Supporting Files */,
 			);
@@ -251,6 +256,7 @@
 			files = (
 				4B25CECF1981F8DB000064F9 /* ViewController.m in Sources */,
 				4B25CEC91981F8DB000064F9 /* AppDelegate.m in Sources */,
+				4B25CEEF1981F93A000064F9 /* CoreGraphicView.m in Sources */,
 				4B25CEC51981F8DB000064F9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
